@@ -1,0 +1,105 @@
+* {box-sizing:border-box;}
+
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 26px;
+    line-height: 1.6em;
+    font-weight: 300;
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2, h3, h4 {
+	font-family: 'Kanit', sans-serif;
+	font-weight: 700;
+	line-height: 1.2em;
+	margin-top: 0;
+	margin-bottom: 1em;
+}
+
+h1 {font-size: 3em;}
+h2 {font-size: 1.4em;}
+h3 {font-size: 1.1em;}
+h4 {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 0.9em;
+    font-weight: 300;
+}
+
+p {margin-bottom: 1em;}
+
+p:last-of-type {margin-bottom: 0;}
+
+section {
+	width: 100%;
+	padding: 2em 0;
+}
+
+.container {
+	width: 100%;
+	max-width: 1000px;
+	margin: auto;
+	padding: 2em 1em;
+}
+
+.grid {
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin: 0 auto;
+}
+
+.grid > * {margin:10px;}
+
+.col-1 {width: calc(100% - 20px);}
+.col-2 {width: calc(50% - 20px);}
+.col-3 {width: calc(33% - 20px);}
+.col-3x2 {width: calc(66% - 20px);}
+.grid svg {
+	width: 100px;height:100px;
+}
+
+.forms > * {
+  width: 100%;
+}
+
+.forms h4 {
+	margin-top: 1em;
+	margin-bottom: 0.2em;
+}
+
+textarea {
+	font-family: monospace;
+	font-size: 12px;
+	height: 200px;
+	background: #eee;
+	border-color: #ccc;
+	margin-bottom: 0.5em;
+}
+
+button {
+	background: #fff;
+	border-color: #ccc;
+	font-size: 0.8em;
+	border-radius: 3px;
+	padding: 0.5em;
+}
+
+button:hover {
+	background:#ddd;
+}
+
+.clipboard {
+	background:
+    url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTYgMTBjMy40NjkgMCAyIDQgMiA0czQtMS41OTQgNCAydjZoLTEwdi0xMmg0em0uODI3LTJoLTYuODI3djE2aDE0di04Ljg0MmMwLTIuMzkyLTQuMDExLTcuMTU4LTcuMTczLTcuMTU4em0tOC44MjcgMTJoLTZ2LTE2aDRsMi4xMDIgMmgzLjg5OGwyLTJoNHYyLjE0NWMuNjU2LjE0MyAxLjMyNy4zOTEgMiAuNzU0di00Ljg5OWgtM2MtMS4yMjkgMC0yLjE4LTEuMDg0LTMtMmgtOGMtLjgyLjkxNi0xLjc3MSAyLTMgMmgtM3YyMGg4di0yem0yLTE4Yy41NTMgMCAxIC40NDggMSAxcy0uNDQ3IDEtMSAxLTEtLjQ0OC0xLTEgLjQ0Ny0xIDEtMXptNCAxOGg2di0xaC02djF6bTAtMmg2di0xaC02djF6bTAtMmg2di0xaC02djF6Ii8+PC9zdmc+)
+    no-repeat
+    center center;
+  padding: 5px 15px;
+}
+
+.textCenter {text-align:center;}
+
+.whiteText {color:white;}
+
+.gradient {background-image: linear-gradient(to right bottom, #ff0093, #ff0082, #ff0070, #ff005f, #ff004e);}
+

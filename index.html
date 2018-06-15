@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+<html lang="en"> 
+<head> 
+<meta http-equiv="content-type" content="text/html; charset=utf-8"> 
+<title>SVG Conversion | From Adobe Illustrator to 'use'</title> 
+<link rel="stylesheet" type="text/css" href="style.css">
+<link href="https://fonts.googleapis.com/css?family=Kanit:700" rel="stylesheet">
+<script src="jquery.min.js"></script>
+</head> 
+<body> 
+<section id="head" class="gradient">
+<div class="container grid">
+<div class="col-1 textCenter">
+<h1 class="whiteText">SVG 2 &lt;use&gt;</h1>
+<p class="whiteText">This site is a tool created to help speed up the process converting raw SVG icon set code so that it can be used as an inline SVG with the &lt;use&gt; method. This tool will generate the converted SVG code, a CSS style sheet to control the &lt;use&gt; elements and HTML document to represent the result.</p>
+</div>
+</div>
+</section>
+<section id="mainBody">
+<div class="container grid">
+
+<div id="initialSVGcode" class="forms col-1">
+<h4>Put raw SVG code here</h4>
+<textarea placeholder="<svg...">
+</textarea>
+<button id="submitSVG">Convert SVG Code</button>
+<div id="hidden" style="display:none;"></div>
+</div>
+
+<div id="convertedSVGcode" class="forms col-3">
+<h4>SVG as &lt;symbols&gt;</h4>
+<textarea id="SVGcontent" readonly></textarea>
+<button onclick="copySVGcodeFunction()"><span class="clipboard"></span></button>
+</div>
+
+<div id="convertedHTMLcode" class="forms col-3">
+<h4>HTML svg &lt;use&gt;</h4>
+<textarea id="HTMLcontent" readonly></textarea>
+<button onclick="copyHTMLcodeFunction()"><span class="clipboard"></span></button>
+</div>
+
+<div id="convertedCSScode" class="forms col-3">
+<h4>CSS</h4>
+<textarea id="CSScontent" readonly></textarea>
+<button onclick="copyCSScodeFunction()"><span class="clipboard"></span></button>
+</div>
+
+<div id="iconHolder" class="col-1 grid" style="opacity:1;"></div>
+
+</div>
+
+</section>
+<section id="socialFollowMe" class="textCenter"><a href="www.daveknispel.com.au">find me here</a></section>
+<footer class="textCenter">this site is produced by Dave Knispel</footer>
+<script src="scripts.js"></script>
+
+</body> 
+</html>
