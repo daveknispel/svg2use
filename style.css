@@ -83,6 +83,8 @@ button {
 	font-size: 0.8em;
 	border-radius: 3px;
 	padding: 0.5em;
+	box-shadow:none;
+	outline:none;
 }
 
 button:hover {
