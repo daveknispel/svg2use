@@ -1,3 +1,5 @@
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+
 * {box-sizing:border-box;}
 
 body {
@@ -59,6 +61,8 @@ section {
 	width: 100px;height:100px;
 }
 
+.forms {position: relative;}
+
 .forms > * {
   width: 100%;
 }
@@ -73,22 +77,45 @@ textarea {
 	font-size: 12px;
 	height: 200px;
 	background: #eee;
-	border-color: #ccc;
+	border: 1px solid #ccc;
 	margin-bottom: 0.5em;
 }
 
 button {
 	background: #fff;
-	border-color: #ccc;
+	border: 1px solid #ccc;
 	font-size: 0.8em;
 	border-radius: 3px;
 	padding: 0.5em;
-	box-shadow:none;
-	outline:none;
 }
 
 button:hover {
 	background:#ddd;
+}
+
+symbol *, svg, svg use {fill: currentColor;}
+#socialFollowMe svg {
+	width: 50px;
+	height: 50px;
+}
+svg use{color:#ccc;}
+svg:hover use{color:#aaa;}
+
+.resetAll {
+	position: absolute;
+	right: 10px;
+	top: 2em;
+	border-radius: 20px;
+	text-align: center;
+	width: 180px;
+}
+.appendSample {
+	position: absolute;
+	right: 10px;
+	top: 5em;
+	border-radius: 20px;
+	text-align: center;
+	width: 180px;
 }
 
 .clipboard {
@@ -101,7 +128,11 @@ button:hover {
 
 .textCenter {text-align:center;}
 
+.smallText {font-size: 0.5em;}
+
 .whiteText {color:white;}
+
+.lightGrey {color:#999;}
 
 .gradient {background-image: linear-gradient(to right bottom, #ff0093, #ff0082, #ff0070, #ff005f, #ff004e);}
 

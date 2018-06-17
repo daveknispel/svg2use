@@ -1,4 +1,21 @@
+function resetResults() {
+  $('#convertedSVGcode textarea, #convertedCSScode textarea, #convertedHTMLcode textarea').val('');
+  $('#hidden, #iconHolder').html('');
+}
+
+function resetAll() {
+  $('textarea').val('');
+  $('#hidden, #iconHolder').html('');
+}
+
+$(document).ready(function(){
+resetAll();
+  });
+
 $('#submitSVG').click(function(e) {  
+
+  resetResults();
+
   //PLACE SVG INTO HIDDEN DIV
   var SVGinitial = $('#initialSVGcode textarea').val();
   $('#hidden').html(SVGinitial);  
@@ -72,3 +89,15 @@ function copyCSScodeFunction() {
   /* Alert the copied text */
   //alert("Copied the css: " + cssText.value);
 } 
+
+//INSERT SAMPLE CODE BUTTON 
+function insertSamplecodeFunction() {
+  var sample = $('#sampleCode').html();
+  $('#initialSVGcode textarea').val(sample);
+}
+
+
+
+
+
+
