@@ -44,13 +44,17 @@ $('#submitSVG').click(function(e) {
   var HTMLlist = '';
   $("#hidden svg > g").each(function(){
   var id = $(this).attr('id');
-  var HTML = '<svg><use xlink:href="#' + id + '"></use></svg>\n\n'; 
+  var HTML = '<svg viewBox="' + viewBox + '"><use xlink:href="#' + id + '"></use></svg>\n\n'; 
   HTMLlist = HTMLlist + HTML;
   });
   //var HTMLlist = HTMLlist + '\n</body>';
   $('#convertedHTMLcode textarea').val(HTMLlist);  
 
   $('#iconHolder').html(SVG + '<style>' + CSS + '</style>' + HTMLlist);
+
+  $('html, body').animate({
+            scrollTop: $("#converted").offset().top
+   }, 500);
   
 });
 

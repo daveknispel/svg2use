@@ -2,13 +2,14 @@
 <html lang="en"> 
 <head> 
 <meta http-equiv="content-type" content="text/html; charset=utf-8"> 
-<title>SVG Conversion | From Adobe Illustrator to 'use'</title> 
+<title>SVG Conversion | Layered SVG converted for use method</title> 
 <link rel="stylesheet" type="text/css" href="style.css">
 <link href="https://fonts.googleapis.com/css?family=Kanit:700" rel="stylesheet">
 <script src="jquery.min.js"></script>
 </head> 
 <body> 
 <section id="head" class="gradient">
+<a class="github topGithub whiteText smallText" href="https://github.com/daveknispel/svg2use"><svg class="icon"><use href="socialicons.svg#github"></use></svg>GitHub</a>
 <div class="container grid">
 <div class="col-1 textCenter">
 <h1 class="whiteText">SVG 2 &lt;use&gt;</h1>
@@ -29,22 +30,24 @@
 <div id="hidden" style="display:none;"></div>
 </div>
 
+<a href="#converted"></a>
+
 <div id="convertedSVGcode" class="forms col-3">
 <h4>SVG as &lt;symbols&gt;</h4>
 <textarea id="SVGcontent" readonly></textarea>
-<button onclick="copySVGcodeFunction()"><span class="clipboard"></span></button>
+<button onclick="copySVGcodeFunction()"><svg class="icon"><use href="socialicons.svg#clipboard"></use></svg></button>
 </div>
 
 <div id="convertedHTMLcode" class="forms col-3">
 <h4>HTML svg &lt;use&gt;</h4>
 <textarea id="HTMLcontent" readonly></textarea>
-<button onclick="copyHTMLcodeFunction()"><span class="clipboard"></span></button>
+<button onclick="copyHTMLcodeFunction()"><svg class="icon"><use href="socialicons.svg#clipboard"></use></svg></button>
 </div>
 
 <div id="convertedCSScode" class="forms col-3">
 <h4>CSS</h4>
 <textarea id="CSScontent" readonly></textarea>
-<button onclick="copyCSScodeFunction()"><span class="clipboard"></span></button>
+<button onclick="copyCSScodeFunction()"><svg class="icon"><use href="socialicons.svg#clipboard"></use></svg></button>
 </div>
 
 <div id="iconHolder" class="col-1 grid" style="opacity:1;"></div>
@@ -52,9 +55,14 @@
 </div>
 
 </section>
-<section id="socialFollowMe" class="textCenter">
 
-<div class="grid">
+
+                                               
+<hr>
+
+<section>
+<div class="'"container">
+<div id="socialFollowMe" class="grid textCenter">
 <a class="behance" href="https://www.behance.net/daveknispel" target="_blank"><svg class="icon"><use href="socialicons.svg#behance"></use></svg></a>
 <a class="pinterest" href="https://au.pinterest.com/daveknispel/my-work/" target="_blank"><svg class="icon"><use href="socialicons.svg#pinterest"></use></svg></a>
 <a class="vimeo" href="https://vimeo.com/daveknispel/" target="_blank"><svg class="icon"><use href="socialicons.svg#vimeo"></use></svg></a>
@@ -65,12 +73,9 @@
 <a class="linkedin" href="https://www.linkedin.com/in/daveknispel" target="_blank"><svg class="icon"><use href="socialicons.svg#linkedin"></use></svg></a>
 <a class="instagram" href="https://www.instagram.com/daveknispel/" target="_blank"><svg class="icon"><use href="socialicons.svg#instagram"></use></svg></a>
 <a class="medium" href="https://medium.com/@daveknispel" target="_blank"><svg class="icon"><use href="socialicons.svg#medium"></use></svg></a>
-</div>                                                
-
-
-</section>
-<section>
-<footer class="textCenter smallText">produced by <a href="http://www.daveknispel.com.au" target="_blank">Dave Knispel</a></footer>
+</div> 
+</div> 
+<footer class="textCenter smallText"><p>produced by <a href="http://www.daveknispel.com.au" target="_blank">Dave Knispel</a></p></footer>
 </section>
 
 <div id="sampleCode" style="display: none;"><?xml version="1.0" encoding="utf-8"?>
