@@ -10,7 +10,8 @@ function resetAll() {
 
 $(document).ready(function(){
 resetAll();
-  });
+
+});
 
 $('#submitSVG').click(function(e) {  
 
@@ -34,7 +35,7 @@ $('#submitSVG').click(function(e) {
   $("#hidden svg > g").each(function(){
   var id = $(this).attr('id');
   var innerSVG = $(this).html();
-  var symbol = '\n<symbol id="' + id + '" viewBox="' + viewBox + '">' + innerSVG + '</symbol>'; 
+  var symbol = '\n<symbol id="' + id + '" viewBox="' + viewBox + '"><title>' + id + '</title>' + innerSVG + '</symbol>'; 
   SVG = SVG + symbol;
   });
   var SVG = SVG + '\n</svg>';
@@ -44,13 +45,13 @@ $('#submitSVG').click(function(e) {
   var HTMLlist = '';
   $("#hidden svg > g").each(function(){
   var id = $(this).attr('id');
-  var HTML = '<svg viewBox="' + viewBox + '"><use xlink:href="#' + id + '"></use></svg>\n\n'; 
+  var HTML = '<svg title="' + id + '" viewBox="' + viewBox + '" role="img"><use xlink:href="#' + id + '"></use></svg>\n\n'; 
   HTMLlist = HTMLlist + HTML;
   });
   //var HTMLlist = HTMLlist + '\n</body>';
   $('#convertedHTMLcode textarea').val(HTMLlist);  
 
-  $('#iconHolder').html(SVG + '<style>' + CSS + '</style>' + HTMLlist);
+  $('#iconHolder').html(SVG + HTMLlist + '<style>' + CSS + '</style>');
 
   $('html, body').animate({
             scrollTop: $("#converted").offset().top
@@ -99,6 +100,8 @@ function insertSamplecodeFunction() {
   var sample = $('#sampleCode').html();
   $('#initialSVGcode textarea').val(sample);
 }
+
+
 
 
 
