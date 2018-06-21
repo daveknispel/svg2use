@@ -54,8 +54,8 @@ $('#submitSVG').click(function(e) {
   $('#iconHolder').html(SVG + HTMLlist + '<style>' + CSS + '</style>');
 
   $('html, body').animate({
-            scrollTop: $("#converted").offset().top
-   }, 500);
+        scrollTop: $("#convertedSVGcode").offset().top
+    }, 1000);
   
 });
 
@@ -97,8 +97,19 @@ function copyCSScodeFunction() {
 
 //INSERT SAMPLE CODE BUTTON 
 function insertSamplecodeFunction() {
-  var sample = $('#sampleCode').html();
-  $('#initialSVGcode textarea').val(sample);
+  //var sample = $('#sampleCode').html();
+  //$('#initialSVGcode textarea').val(sample);
+
+var testing;
+$.ajax('samplecode.xml', {
+    dataType: 'text',
+    success: function (data) {
+        testing = data;
+        $('#initialSVGcode textarea').val(testing);
+    }
+});
+
+  
 }
 
 

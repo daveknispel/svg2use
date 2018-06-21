@@ -10,11 +10,11 @@ body {
     padding: 0;
     margin: 0;
     background-color: #fff;
-    color: #555;
+    color: #666;
 }
 
 h1, h2, h3, h4 {
-	font-family: 'Kanit', sans-serif;
+	font-family: 'Luckiest Guy', sans-serif;
 	font-weight: 700;
 	line-height: 1.2em;
 	margin-top: 0;
@@ -25,7 +25,10 @@ h1 {
 	margin-top: 1em;
 }
 
-h1 {font-size: 3em;}
+h1 {
+	font-size: 3em;
+	text-shadow: 15px 25px 30px rgba(82,12,80,0.6);
+}
 h2 {font-size: 1.4em;}
 h3 {font-size: 1.1em;}
 h4 {
@@ -95,14 +98,28 @@ button {
 	line-height: 1.4em;
 	border-radius: 3px;
 	padding: 0.5em;
-	color: #555;
+	color: #999;
+	cursor: pointer;
+	box-shadow: 0 1px 1px #eee;
+	transition: 0.3s ease-in;
 }
 
 button:hover {
-	background:#ddd;
+	background:#eee;
+	color: #555;
+}
+
+button:active {
+	transform: translateY(2px);
+	background:#f5f5f5;
+	box-shadow: 0 0px 1px #eee;
 }
 
 symbol *, svg, svg use {fill: currentColor;}
+
+#iconHolder {
+	margin-top: 30px;
+}
 
 #iconHolder svg {
 	width: 60px; 
@@ -145,25 +162,25 @@ symbol *, svg, svg use {fill: currentColor;}
 
 .resetAll {
 	position: absolute;
-	right: 10px;
-	top: 2em;
+	right: 20px;
+	top: 1.8em;
 	border-radius: 20px;
 	text-align: center;
 	width: 180px;
 }
 .appendSample {
 	position: absolute;
-	right: 10px;
-	top: 5em;
+	right: 20px;
+	top: 5.2em;
 	border-radius: 20px;
 	text-align: center;
 	width: 180px;
 }
 
 button svg {
-	width: 40px;
-	height: 40px;
-	color: #555;
+	width: 35px;
+	height: 30px;
+	color: inherit;
 }
 
 .textCenter {text-align:center;}
