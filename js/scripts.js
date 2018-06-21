@@ -117,5 +117,3 @@ $.ajax('samplecode.xml', {
 
 
 
-
-
