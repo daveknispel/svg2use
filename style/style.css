@@ -22,7 +22,7 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-	margin-top: 1em;
+	margin-top: 1.5em;
 }
 
 h1 {
@@ -91,13 +91,13 @@ textarea {
 	font-size: 12px;
 	height: 200px;
 	background: #eee;
-	border: 1px solid #ccc;
+	border: 1px solid #ddd;
 	margin-bottom: 0.5em;
 }
 
 button {
 	background: #fff;
-	border: 1px solid #ccc;
+	border: 1px solid #ddd;
 	font-size: 0.8em;
 	line-height: 1.4em;
 	border-radius: 3px;
@@ -153,13 +153,21 @@ symbol *, svg, svg use {fill: currentColor;}
 	right: 0;
 	padding:  0.2em 1em;
 	background: #fff;
+	border-bottom: 1px solid  #ddd;
+}
+
+#topBar span {
+	display: inline-block;
+	vertical-align: middle;
 }
 
 .topGithub {
+	color: #999;
 	text-decoration: none;
 }
 
 .topGithub:hover {
+	color: #999;
 	opacity: 0.8;
 }
 
@@ -209,7 +217,7 @@ button svg {
 .gradient {background-image: linear-gradient(to right bottom, #ff0093, #ff0082, #ff0070, #ff005f, #ff004e);}
 
 hr {
-	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	border-top: 1px solid #ddd;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
