@@ -147,20 +147,19 @@ symbol *, svg, svg use {fill: currentColor;}
 }
 
 #topBar {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
 	padding:  0.2em 1em;
+	background: #fff;
 }
 
 .topGithub {
-	color: #fff;
 	text-decoration: none;
 }
 
 .topGithub:hover {
-	color: #fff;
 	opacity: 0.8;
 }
 
