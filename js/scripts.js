@@ -22,11 +22,20 @@ $('#submitSVG').click(function(e) {
   $('#hidden').html(SVGinitial);  
   
   //GET CSS CODE & ADD TO TEXTAREA
-  var CSS = $('#hidden [type="text/css"]')[0].innerHTML;
-  //replace fill with color
-  CSS = CSS.replace(/fill/g, 'color').replace(/\t/g, '');
-  //build standard svg css color styling & current class color styling
-  $('#convertedCSScode textarea').val('symbol *{fill: currentColor;}' + CSS);
+  if ($('#hidden [type="text/css"]').length) {
+    var CSS = $('#hidden [type="text/css"]')[0].innerHTML;
+    //replace fill with color
+    CSS = CSS.replace(/fill/g, 'color').replace(/\t/g, '');
+    CSS = 'symbol *, svg, svg use{fill: currentColor;}' + CSS + '\nsvg use{color:#666;} \nsvg:hover use{color:#111;}';
+    //build standard svg css color styling & current class color styling
+    $('#convertedCSScode textarea').val(CSS);
+  } else {
+    var CSS = 'symbol *, svg, svg use{fill: currentColor;} \nsvg use{color:#666;} \nsvg:hover use{color:#111;}';
+    $('#convertedCSScode textarea').val(CSS);
+  }
+
+
+  
   
   //GENERATE NEW SVG CODE & ADD TO TEXTAREA
   var viewBox = $('#hidden svg').attr('viewBox');
@@ -52,6 +61,8 @@ $('#submitSVG').click(function(e) {
   $('#convertedHTMLcode textarea').val(HTMLlist);  
 
   $('#iconHolder').html(SVG + HTMLlist + '<style>' + CSS + '</style>');
+
+  $('#hidden').empty();
 
   $('html, body').animate({
         scrollTop: $("#convertedSVGcode").offset().top
@@ -97,8 +108,6 @@ function copyCSScodeFunction() {
 
 //INSERT SAMPLE CODE BUTTON 
 function insertSamplecodeFunction() {
-  //var sample = $('#sampleCode').html();
-  //$('#initialSVGcode textarea').val(sample);
 
 var testing;
 $.ajax('samplecode.xml', {
@@ -109,8 +118,9 @@ $.ajax('samplecode.xml', {
     }
 });
 
-  
 }
+
+
 
 
 
