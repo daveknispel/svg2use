@@ -3,47 +3,50 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 * {box-sizing:border-box;}
 
 body {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 26px;
-    line-height: 1.6em;
-    font-weight: 300;
-    padding: 0;
-    margin: 0;
-    background-color: #fff;
-    color: #666;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+font-size: 26px;
+line-height: 1.6em;
+font-weight: 300;
+padding: 0;
+margin: 0;
+background-color: #fff;
+color: #666;
 }
 
 /* HEADING TAGS */ 
 
 h1, h2, h3, h4 {
-	font-family: 'Luckiest Guy', sans-serif;
-	font-weight: 700;
-	line-height: 1.2em;
-	margin-top: 0;
-	margin-bottom: 0.5em;
+font-family: 'Luckiest Guy', sans-serif;
+font-weight: 700;
+line-height: 1.2em;
+margin-top: 0;
+margin-bottom: 0.5em;
 }
 
 h1 {
-	margin-top: 60px;
-	margin-bottom: 0em;
+margin-top: 60px;
+margin-bottom: 0em;
 }
 
 h1 {
-	font-size: 5em;
-	text-shadow: 15px 25px 30px rgba(82,12,80,0.6);
+font-size: 5em;
+text-shadow: 15px 25px 30px rgba(82,12,80,0.6);
 }
 h2 {font-size: 1.4em;}
 h3 {font-size: 1.1em;}
 h4 {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 0.9em;
-    font-weight: 300;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+font-size: 0.9em;
+font-weight: 300;
 }
 
 .logo svg {
-	width: 3.5em;
-	height: 1em;
+width: 3.5em;
+height: 1em;
+color: #fff;
 }
+
+.logo:hover svg {color:#fff;}
 
 p {margin-bottom: 1em;}
 
@@ -54,26 +57,26 @@ a {color:#ff0093;}
 a:hover {color:#ff004e;}
 
 section {
-	width: 100%;
-	padding: 1em 0;
+width: 100%;
+padding: 1em 0;
 }
 
 .container {
-	width: 100%;
-	max-width: 1000px;
-	margin: auto;
-	padding: 1em 1em;
+width: 100%;
+max-width: 1000px;
+margin: auto;
+padding: 1em 1em;
 }
 
 .grid {
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  margin: 0 auto;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+margin: 0 auto;
 }
 
 .justify {
-  justify-content: space-between;
+justify-content: space-between;
 }
 
 .grid > [class*='col-'] {margin:10px;}
@@ -86,145 +89,158 @@ section {
 .forms {position: relative;}
 
 .forms > * {
-  width: 100%;
+width: 100%;
 }
 
 .forms h4 {
-	margin-top: 1em;
-	margin-bottom: 0.2em;
+margin-top: 1em;
+margin-bottom: 0.2em;
 }
 
 textarea {
-	font-family: monospace;
-	font-size: 12px;
-	height: 200px;
-	color: #676767;
-	background: #eee;
-	border: 1px solid #ddd;
-	margin-bottom: 0.5em;
+font-family: monospace;
+font-size: 12px;
+height: 200px;
+color: #676767;
+background: #eee;
+border: 1px solid #ddd;
+margin-bottom: 0.5em;
 }
 
 button {
-	background: #fff;
-	border: 1px solid #ddd;
-	font-size: 0.8em;
-	line-height: 1.4em;
-	border-radius: 3px;
-	padding: 0.5em;
-	color: #999;
-	cursor: pointer;
-	box-shadow: 0 1px 1px #eee;
-	transition: 0.3s ease-in;
+background: #fff;
+border: 1px solid #ddd;
+font-size: 0.8em;
+line-height: 1.4em;
+border-radius: 3px;
+padding: 0.5em;
+cursor: pointer;
+box-shadow: 0 1px 1px #eee;
+transition: 0.3s ease-in;
 }
 
-button:hover {
-	background:#eee;
-	color: #555;
+button[disabled] {
+	color: #ddd;
+	pointer-events: none;
+}
+
+button:not([disabled]):hover {
+background:#eee;
+color: #555;
 }
 
 button:active {
-	transform: translateY(2px);
-	background:#f5f5f5;
-	box-shadow: 0 0px 1px #eee;
+transform: translateY(2px);
+background:#f5f5f5;
+box-shadow: 0 0px 1px #eee;
 }
 
 symbol *, svg, svg use {fill: currentColor;}
 
 svg {
-	width: 1em;
-	height: 1em;
+width: 1em;
+height: 1em;
+vertical-align: middle;
+overflow: hidden;
+transition: 0.3s ease-in;
 }
 
+/* ICON HOLDER */
+
 #iconHolder {
-	margin-top: 30px;
+margin-top: 30px;
 }
 
 #iconHolder svg {
-	font-size: 1.6em;
-	margin: 5px;
+font-size: 2.2em;
+margin: 5px;
 }
 
+/* SOCIAL FOLLOW ICONS */
+
 #socialFollowMe a {
-	color: #ccc;
+color: #ccc;
 }
 
 #socialFollowMe svg {
-	font-size: 1.5em;
-	margin: 5px;
+font-size: 1.5em;
+margin: 5px;
+color: inherit;
 }
 
 #socialFollowMe a:hover {
-	opacity: 0.8;
+color:#ff004e;
 }
 
 #topBar {
-	position: fixed;
-	z-index: 10;
-	top: 0;
-	left: 0;
-	right: 0;
-	padding:  0.2em 1em;
-	background: #fff;
-	border-bottom: 1px solid  #ddd;
+position: fixed;
+z-index: 10;
+top: 0;
+left: 0;
+right: 0;
+padding:  0.2em 1em;
+background: #fff;
+border-bottom: 1px solid  #ddd;
 }
 
 #topBar span {
-	display: inline-block;
-	vertical-align: middle;
+display: inline-block;
+vertical-align: middle;
 }
 
- #topBar iframe {
-	display: inline-block;
-	vertical-align: middle;
+#topBar iframe {
+display: inline-block;
+vertical-align: middle;
 }
 
 .topGithub {
-	color: inherit;
-	text-decoration: none;
+color: inherit;
+text-decoration: none;
+transition: 0.3s ease-in;
 }
 
 .topGithub:hover {
-	opacity: 0.8;
+color:#ff004e;
 }
 
 .topGithub svg {
-	display: inline-block;
-	font-size: 2em;
-	vertical-align: middle;
-	margin-right: 5px;
+display: inline-block;
+font-size: 2.5em;
+vertical-align: middle;
+margin-right: 5px;
 }
 
 #st-1.sharethis-inline-share-buttons {display: inline-block;}
 
 #st-1.sharethis-inline-share-buttons .st-btn {
-	color:#fff;
-	vertical-align: middle;
-	margin-right: 0;
-	margin-left: 5px;
+color:#fff;
+vertical-align: middle;
+margin-right: 0;
+margin-left: 5px;
 }
 
 #st-1.sharethis-inline-share-buttons .st-btn:hover {top: 0;}
 
 .resetAll {
-	position: absolute;
-	right: 20px;
-	top: 1.8em;
-	border-radius: 20px;
-	text-align: center;
-	width: 180px;
+position: absolute;
+right: 20px;
+top: 1.8em;
+border-radius: 20px;
+text-align: center;
+width: 180px;
 }
 .appendSample {
-	position: absolute;
-	right: 20px;
-	top: 5.2em;
-	border-radius: 20px;
-	text-align: center;
-	width: 180px;
+position: absolute;
+right: 20px;
+top: 5.2em;
+border-radius: 20px;
+text-align: center;
+width: 180px;
 }
 
 button svg {
-	font-size: 1.5em;
-	color: inherit;
+font-size: 1.5em;
+color: inherit;
 }
 
 .textCenter {text-align:center;}
@@ -238,8 +254,8 @@ button svg {
 .gradient {background-image: linear-gradient(to right bottom, #ff0093, #ff0082, #ff0070, #ff005f, #ff004e);}
 
 hr {
-	border-top: 1px solid #ddd;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+border-top: 1px solid #ddd;
+border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 

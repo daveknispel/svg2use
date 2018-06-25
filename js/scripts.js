@@ -6,11 +6,23 @@ function resetResults() {
 function resetAll() {
   $('textarea').val('');
   $('#hidden, #iconHolder').html('');
+  //activate buttons
+  $('#submitSVG').prop('disabled' , true);
+  $('#convertedSVGcode button, #convertedCSScode button, #convertedHTMLcode button').prop('disabled' , true);
 }
 
 $(document).ready(function(){
 resetAll();
 
+});
+
+//ACTIVATE BUTTON LOOP
+$('#rawSVG').keyup(function() {
+      if ( $(this).val().indexOf("svg") > -1 ) {
+          $('#submitSVG').prop('disabled' , false);
+     } else {
+         $('#submitSVG').prop('disabled' , true);
+  }
 });
 
 $('#submitSVG').click(function(e) {  
@@ -26,16 +38,13 @@ $('#submitSVG').click(function(e) {
     var CSS = $('#hidden [type="text/css"]')[0].innerHTML;
     //replace fill with color
     CSS = CSS.replace(/fill/g, 'color').replace(/\t/g, '');
-    CSS = 'symbol *, svg, svg use{fill: currentColor;}' + CSS + '\nsvg use{color:#666;} \nsvg:hover use{color:#111;}';
+    CSS = 'symbol *, svg, svg use{fill: currentColor;}' + CSS + '\nsvg {color:#666;} \nsvg:hover {color:#111;}';
     //build standard svg css color styling & current class color styling
     $('#convertedCSScode textarea').val(CSS);
   } else {
-    var CSS = 'symbol *, svg, svg use{fill: currentColor;} \nsvg use{color:#666;} \nsvg:hover use{color:#111;}';
+    var CSS = 'symbol *, svg, svg use{fill: currentColor;} \nsvg {color:#666;} \nsvg:hover {color:#111;}';
     $('#convertedCSScode textarea').val(CSS);
   }
-
-
-  
   
   //GENERATE NEW SVG CODE & ADD TO TEXTAREA
   var viewBox = $('#hidden svg').attr('viewBox');
@@ -64,8 +73,11 @@ $('#submitSVG').click(function(e) {
 
   $('#hidden').empty();
 
+  //activate buttons
+  $('#convertedSVGcode button, #convertedCSScode button, #convertedHTMLcode button').prop('disabled' , false);
+
   $('html, body').animate({
-        scrollTop: $("#convertedSVGcode").offset().top
+        scrollTop: $("#convertedSVGcode").offset().top - 70
     }, 1000);
   
 });
@@ -117,6 +129,8 @@ $.ajax('samplecode.xml', {
         $('#initialSVGcode textarea').val(testing);
     }
 });
+
+$('#submitSVG').prop('disabled' , false);
 
 }
 
