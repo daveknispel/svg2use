@@ -219,6 +219,10 @@ margin-right: 0;
 margin-left: 5px;
 }
 
+#st-1.sharethis-inline-share-buttons .st-btn svg, #st-1.sharethis-inline-share-buttons .st-btn:hover svg  {
+	color: inherit;
+}
+
 #st-1.sharethis-inline-share-buttons .st-btn:hover {top: 0;}
 
 .resetAll {
