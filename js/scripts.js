@@ -54,7 +54,7 @@ $('#submitSVG').click(function(e) {
   var HTMLlist = '';
   $("#hidden svg > g").each(function(){
   var id = $(this).attr('id');
-  var HTML = '<svg title="' + id + '" viewBox="' + viewBox + '" role="img"><use xlink:href="#' + id + '"></use></svg>\n\n'; 
+  var HTML = '<svg focusable="false" title="' + id + '" viewBox="' + viewBox + '" role="img">\n<use xlink:href="#' + id + '"></use></svg>\n\n'; 
   HTMLlist = HTMLlist + HTML;
   });
   //var HTMLlist = HTMLlist + '\n</body>';
