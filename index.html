@@ -120,7 +120,7 @@
 <div id="topBar" class="grid justify">
 <a class="github topGithub smallText" href="https://github.com/daveknispel/svg2use"><svg class="icon"><use xlink:href="socialicons.svg#github"></use></svg><span>View on GitHub</span></a>
 	<div>
-    <a class="github-button" href="https://github.com/daveknispel/svg2use" data-show-count="true" aria-label="Star daveknispel/svg2use on GitHub">Star</a>
+    <a class="github-button" href="https://github.com/daveknispel/svg2use" data-show-count="false" aria-label="Star daveknispel/svg2use on GitHub">Star</a>
 	<span class="smallText">Please Share </span><div class="sharethis-inline-share-buttons"></div>
 	</div>
 </div>
@@ -151,19 +151,19 @@
 <div id="convertedSVGcode" class="forms col-3">
 <h4>SVG as &lt;symbols&gt;</h4>
 <textarea id="SVGcontent" readonly></textarea>
-<button onclick="copySVGcodeFunction()" disabled><svg class="icon"><use xlink:href="socialicons.svg#clipboard"></use></svg></button>
+<button onclick="copySVGcodeFunction()" disabled><svg class="icon"><use xlink:href="socialicons.svg#clipboard"></use></svg> <span>Copy to Clipboard</span></button>
 </div>
 
 <div id="convertedHTMLcode" class="forms col-3">
 <h4>HTML svg &lt;use&gt;</h4>
 <textarea id="HTMLcontent" readonly></textarea>
-<button onclick="copyHTMLcodeFunction()" disabled><svg class="icon"><use xlink:href="socialicons.svg#clipboard"></use></svg></button>
+<button onclick="copyHTMLcodeFunction()" disabled><svg class="icon"><use xlink:href="socialicons.svg#clipboard"></use></svg> <span>Copy to Clipboard</span></button>
 </div>
 
 <div id="convertedCSScode" class="forms col-3">
 <h4>CSS</h4>
 <textarea id="CSScontent" readonly></textarea>
-<button onclick="copyCSScodeFunction()" disabled><svg class="icon"><use xlink:href="socialicons.svg#clipboard"></use></svg></button>
+<button onclick="copyCSScodeFunction()" disabled><svg class="icon"><use xlink:href="socialicons.svg#clipboard"></use></svg> <span>Copy to Clipboard</span></button>
 </div>
 
 <div id="iconHolder" class="col-1 grid" style="opacity:1;"></div>
