@@ -151,9 +151,8 @@ transition: 0.3s ease-in;
 margin-top: 30px;
 }
 
-#iconHolder svg {
-font-size: 2.2em;
-margin: 5px;
+#iconHolder .iconWrap {
+	margin: 5px;
 }
 
 /* SOCIAL FOLLOW ICONS */
@@ -260,6 +259,22 @@ color: inherit;
 hr {
 border-top: 1px solid #ddd;
 border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+@media only screen and (max-width: 700px) {
+
+#topBar.justify {justify-content:center;}
+
+.topGithub {display:none;}
+
+h1 {font-size:3em;}
+
+.col-2, .col-3, .col-3x2 {width: calc(100% - 20px);}
+
+.resetAll, .appendSample {position:static;}
+
+#rawSVG {margin-top: 10px;}
+
 }
 
 

@@ -38,11 +38,11 @@ $('#submitSVG').click(function(e) {
     var CSS = $('#hidden [type="text/css"]')[0].innerHTML;
     //replace fill with color
     CSS = CSS.replace(/fill/g, 'color').replace(/\t/g, '');
-    CSS = 'symbol *, svg, svg use{fill: currentColor;}' + CSS + '\nsvg {color:#666;} \nsvg:hover {color:#111;}';
+    CSS = '/* SVG ICON STYLING */\nsymbol *, .icon, .icon use{fill: currentColor;}\n\n/* delete class styling below you want to be effcted by hover effects*/' + CSS + '\n/* HOVER EFFECTS */\n.icon{color:#666;} \n.iconWrap:hover .icon{color:#111;}\n\n/* ICON SIZING */\n.iconWrap{\nfont-size:2em;/* control icon size */\nverticle-align: -0.15em;\noverflow: hidden;\n}\n\n.iconWrap .icon{\nheight: 1em;\nwidth: 1em;\n}\n\n/* ACCESSABILITY TAG */\n.iconWrap .access-label{\nposition: absolute;\nwidth: 1px;\nheight: 1px;\noverflow: hidden;\nwhite-space: nowrap;\n}';
     //build standard svg css color styling & current class color styling
     $('#convertedCSScode textarea').val(CSS);
   } else {
-    var CSS = 'symbol *, svg, svg use{fill: currentColor;} \nsvg {color:#666;} \nsvg:hover {color:#111;}';
+    var CSS = '/* SVG ICON STYLING */\nsymbol *, .icon, .icon use{fill: currentColor;} \n\n/* HOVER EFFECTS */ .icon{color:#666;} \n.iconWrap:hover .icon{color:#111;}\n\n/* ICON SIZING */\n.iconWrap{\nfont-size:2em;/* control icon size */\nverticle-align: -0.15em;\noverflow: hidden;\n}\n\n.iconWrap .icon{\nheight: 1em;\nwidth: 1em;\n}\n\n/* ACCESSABILITY TAG */\n.iconWrap .access-label{\nposition: absolute;\nwidth: 1px;\nheight: 1px;\noverflow: hidden;\nwhite-space: nowrap;\n}';
     $('#convertedCSScode textarea').val(CSS);
   }
   
@@ -53,7 +53,7 @@ $('#submitSVG').click(function(e) {
   $("#hidden svg > g").each(function(){
   var id = $(this).attr('id');
   var innerSVG = $(this).html();
-  var symbol = '\n<symbol id="' + id + '" viewBox="' + viewBox + '"><title>' + id + '</title>' + innerSVG + '</symbol>'; 
+  var symbol = '\n<symbol id="' + id + '" viewBox="' + viewBox + '">' + innerSVG + '</symbol>'; 
   SVG = SVG + symbol;
   });
   var SVG = SVG + '\n</svg>';
@@ -63,7 +63,7 @@ $('#submitSVG').click(function(e) {
   var HTMLlist = '';
   $("#hidden svg > g").each(function(){
   var id = $(this).attr('id');
-  var HTML = '<svg focusable="false" title="' + id + '" viewBox="' + viewBox + '" role="img">\n<use xlink:href="#' + id + '"></use></svg>\n\n'; 
+  var HTML = '<span class="iconWrap">\n<svg class="icon" aria-hidden="true" focusable="false" viewBox="' + viewBox + '" role="img">\n<use xlink:href="#' + id + '"></use>\n</svg>\n<span class="access-label">' + id + '</span>\n</span>\n\n'; 
   HTMLlist = HTMLlist + HTML;
   });
   //var HTMLlist = HTMLlist + '\n</body>';
