@@ -38,7 +38,7 @@ $('#submitSVG').click(function(e) {
     var CSS = $('#hidden [type="text/css"]')[0].innerHTML;
     //replace fill with color
     CSS = CSS.replace(/fill/g, 'color').replace(/\t/g, '');
-    CSS = '/* SVG ICON STYLING */\nsymbol *, .icon, .icon use{fill: currentColor;}\n\n/* delete class styling below you want to be effcted by hover effects*/' + CSS + '\n/* HOVER EFFECTS */\n.icon{color:#666;} \n.iconWrap:hover .icon{color:#111;}\n\n/* ICON SIZING */\n.iconWrap{\nfont-size:2em;/* control icon size */\nverticle-align: -0.15em;\noverflow: hidden;\n}\n\n.iconWrap .icon{\nheight: 1em;\nwidth: 1em;\n}\n\n/* ACCESSABILITY TAG */\n.iconWrap .access-label{\nposition: absolute;\nwidth: 1px;\nheight: 1px;\noverflow: hidden;\nwhite-space: nowrap;\n}';
+    CSS = '/* SVG ICON STYLING */\nsymbol *, .icon, .icon use{fill: currentColor;}\n\n/* delete class styling below you want to be affected by hover effects*/' + CSS + '\n/* HOVER EFFECTS */\n.icon{color:#666;} \n.iconWrap:hover .icon{color:#111;}\n\n/* ICON SIZING */\n.iconWrap{\nfont-size:2em;/* control icon size */\nverticle-align: -0.15em;\noverflow: hidden;\n}\n\n.iconWrap .icon{\nheight: 1em;\nwidth: 1em;\n}\n\n/* ACCESSABILITY TAG */\n.iconWrap .access-label{\nposition: absolute;\nwidth: 1px;\nheight: 1px;\noverflow: hidden;\nwhite-space: nowrap;\n}';
     //build standard svg css color styling & current class color styling
     $('#convertedCSScode textarea').val(CSS);
   } else {
