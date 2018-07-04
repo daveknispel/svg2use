@@ -6,6 +6,7 @@ function resetResults() {
 function resetAll() {
   $('textarea').val('');
   $('#hidden, #iconHolder').html('');
+  $('#iconHolderSize').css('opacity' , '0');
   //activate buttons
   $('#submitSVG').prop('disabled' , true);
   $('#convertedSVGcode button, #convertedCSScode button, #convertedHTMLcode button').prop('disabled' , true);
@@ -13,7 +14,6 @@ function resetAll() {
 
 $(document).ready(function(){
 resetAll();
-
 });
 
 //ACTIVATE BUTTON LOOP
@@ -25,27 +25,42 @@ $('#rawSVG').keyup(function() {
   }
 });
 
-$('#submitSVG').click(function(e) {  
+//CONVERT SVG
+function covertCode() {  
 
   resetResults();
+
 
   //PLACE SVG INTO HIDDEN DIV
   var SVGinitial = $('#initialSVGcode textarea').val();
   $('#hidden').html(SVGinitial);  
   
   //GET CSS CODE & ADD TO TEXTAREA
+
+
+  //check for inline style
   if ($('#hidden [type="text/css"]').length) {
-    var CSS = $('#hidden [type="text/css"]')[0].innerHTML;
+    var inlineCSS = $('#hidden [type="text/css"]')[0].innerHTML;
     //replace fill with color
-    CSS = CSS.replace(/fill/g, 'color').replace(/\t/g, '');
-    CSS = '/* SVG ICON STYLING */\nsymbol *, .icon, .icon use{fill: currentColor;}\n\n/* delete class styling below you want to be affected by hover effects*/' + CSS + '\n/* HOVER EFFECTS */\n.icon{color:#666;} \n.iconWrap:hover .icon{color:#111;}\n\n/* ICON SIZING */\n.iconWrap{\nfont-size:2em;/* control icon size */\nverticle-align: -0.15em;\noverflow: hidden;\n}\n\n.iconWrap .icon{\nheight: 1em;\nwidth: 1em;\n}\n\n/* ACCESSABILITY TAG */\n.iconWrap .access-label{\nposition: absolute;\nwidth: 1px;\nheight: 1px;\noverflow: hidden;\nwhite-space: nowrap;\n}';
+    inlineCSS = inlineCSS.replace(/fill/g, 'color').replace(/\t/g, '');
+    inlineCSS = '\n/* delete class styling below you want to be affected by hover effects*/' + inlineCSS
+  } else {
+    var inlineCSS = '\n';
+  }
+
+  //check for aria label
+  if($('input[name="a_accessibility"]:checked').val() === "aria label") {
+   var arialabel = '\n\n/* ACCESSABILITY TAG */\n.iconWrap .access-label{\nposition: absolute;\nwidth: 1px;\nheight: 1px;\noverflow: hidden;\nwhite-space: nowrap;\n}\n'; 
+  } else {
+     var arialabel = '\n'; 
+  }
+
+  //build css
+  var CSS = '/* SVG ICON STYLING */\nsymbol *, .icon, .icon use{fill: currentColor;}\n' + inlineCSS + '\n/* SIZE & HOVER */\n.icon{\nfont-size:1em;/* control icon size */\nheight: 1em;\nwidth: 1em;\noverflow: hidden;\ncolor:#666;\n}\n\n.icon:hover{color:#111;} ' + arialabel;
     //build standard svg css color styling & current class color styling
     $('#convertedCSScode textarea').val(CSS);
-  } else {
-    var CSS = '/* SVG ICON STYLING */\nsymbol *, .icon, .icon use{fill: currentColor;} \n\n/* HOVER EFFECTS */ .icon{color:#666;} \n.iconWrap:hover .icon{color:#111;}\n\n/* ICON SIZING */\n.iconWrap{\nfont-size:2em;/* control icon size */\nverticle-align: -0.15em;\noverflow: hidden;\n}\n\n.iconWrap .icon{\nheight: 1em;\nwidth: 1em;\n}\n\n/* ACCESSABILITY TAG */\n.iconWrap .access-label{\nposition: absolute;\nwidth: 1px;\nheight: 1px;\noverflow: hidden;\nwhite-space: nowrap;\n}';
-    $('#convertedCSScode textarea').val(CSS);
-  }
-  
+
+
   //GENERATE NEW SVG CODE & ADD TO TEXTAREA
   var viewBox = $('#hidden svg').attr('viewBox');
   var SVG = '<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">';
@@ -53,25 +68,42 @@ $('#submitSVG').click(function(e) {
   $("#hidden svg > g").each(function(){
   var id = $(this).attr('id');
   var innerSVG = $(this).html();
-  var symbol = '\n<symbol id="' + id + '" viewBox="' + viewBox + '">' + innerSVG + '</symbol>'; 
+  //check for accessibility type
+  if($('input[name="a_accessibility"]:checked').val() === "title") {
+     var symbol = '\n<symbol id="' + id + '" viewBox="' + viewBox + '">\n<title>'+ id +'</title>' + innerSVG + '</symbol>'; 
+  } else {
+     var symbol = '\n<symbol id="' + id + '" viewBox="' + viewBox + '">' + innerSVG + '</symbol>'; 
+  }
   SVG = SVG + symbol;
   });
   var SVG = SVG + '\n</svg>';
   $('#convertedSVGcode textarea').val(SVG);
 
+
   //GENERATE HTML ELEMENTS
   var HTMLlist = '';
   $("#hidden svg > g").each(function(){
   var id = $(this).attr('id');
-  var HTML = '<span class="iconWrap">\n<svg class="icon" aria-hidden="true" focusable="false" viewBox="' + viewBox + '" role="img">\n<use xlink:href="#' + id + '"></use>\n</svg>\n<span class="access-label">' + id + '</span>\n</span>\n\n'; 
+  //check for accessibility type
+  if($('input[name="a_accessibility"]:checked').val() === "Off") {
+       var HTML = '<svg class="icon" aria-hidden="true" focusable="false" viewBox="' + viewBox + '" role="presentation">\n<use xlink:href="#' + id + '"></use>\n</svg>\n\n'
+  } else if($('input[name="a_accessibility"]:checked').val() === "title") {
+       var HTML = '<svg class="icon" title="' + id + '" viewBox="' + viewBox + '" role="img">\n<use xlink:href="#' + id + '"></use>\n</svg>\n\n'
+  } else if($('input[name="a_accessibility"]:checked').val() === "aria label") {
+       var HTML = '<span class="iconWrap" title="' + id + '">\n<svg class="icon" aria-hidden="true" focusable="false" viewBox="' + viewBox + '" role="img">\n<use xlink:href="#' + id + '"></use>\n</svg>\n<span class="access-label">' + id + '</span>\n</span>\n\n'; 
+  }
   HTMLlist = HTMLlist + HTML;
   });
-  //var HTMLlist = HTMLlist + '\n</body>';
+
+
   $('#convertedHTMLcode textarea').val(HTMLlist);  
 
   $('#iconHolder').html(SVG + HTMLlist + '<style>' + CSS + '</style>');
 
+  $('#iconHolderSize').css('opacity' , '1');
+
   $('#hidden').empty();
+
 
   //activate buttons
   $('#convertedSVGcode button, #convertedCSScode button, #convertedHTMLcode button').prop('disabled' , false);
@@ -80,7 +112,19 @@ $('#submitSVG').click(function(e) {
         scrollTop: $("#convertedSVGcode").offset().top - 70
     }, 1000);
   
+}
+
+//CONVERT SVG CODE BUTTON
+$('#submitSVG').click(function(e) {
+covertCode();
 });
+
+//SETTINGS RADIO CHANGE
+$('.settings input[type=radio]').change(function(){
+if ($.trim($("#SVGcontent").val())) {  
+covertCode();  
+}   
+})
 
 //COPY SVG CODE TO CLIPBOARD
 function copySVGcodeFunction() {
@@ -133,6 +177,12 @@ $.ajax('samplecode.xml', {
 $('#submitSVG').prop('disabled' , false);
 
 }
+
+//SCALE CHANGE
+$('#iconHolderSize select').on('change', function() {
+  var scale = this.value + 'em';
+  $('#iconHolder').css('font-size' , scale);
+})
 
 
 
