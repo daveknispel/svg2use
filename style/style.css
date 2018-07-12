@@ -81,12 +81,24 @@ section {
 	justify-content: space-between;
 }
 
+.end {
+	justify-content: flex-end;
+}
+
+.alignCenter {
+	align-items: center;
+}
+
 .grid > [class*='col-'] {margin:10px;}
 
 .col-1 {width: calc(100% - 20px);}
 .col-2 {width: calc(50% - 20px);}
 .col-3 {width: calc(33% - 20px);}
 .col-3x2 {width: calc(66% - 20px);}
+
+.grid > .marBot0 {
+	margin-bottom: 0;
+}
 
 #mainBody {
 	background: #f9f9f9;
@@ -154,6 +166,7 @@ textarea {
 	color: #ccc;
 	border: 1px solid #ddd;
 	margin: 0;
+	display:block;
 }
 
 textarea:focus {
@@ -162,7 +175,7 @@ textarea:focus {
 
 button {
 	background: #fff;
-	border: 0px solid transparent;
+	border: 1px solid #ddd;
 	font-size: 0.8em;
 	line-height: 1.4em;
 	border-radius: 3px;
@@ -172,6 +185,10 @@ button {
 	box-shadow: 0 1px 1px #eee;
 	transition: 0.3s ease-in;
 	display: inline-block;
+}
+
+.card button {
+	border: 0px solid transparent;
 }
 
 button[disabled] {
@@ -286,13 +303,10 @@ svg {
 .resetAll {
 	border-radius: 20px;
 	text-align: center;
-	margin: 0.5em 20px 0.2em;
+	margin: 0.5em 0px 0.2em;
 	border: 1px solid #ddd;
 }
 .appendSample {
-	position: absolute;
-	right: 20px;
-	top: 5.2em;
 	border-radius: 20px;
 	text-align: center;
 	max-width: 190px;
@@ -302,6 +316,8 @@ button svg {
 	font-size: 1.5em;
 	color: inherit;
 }
+
+.inline {display: inline-block;}
 
 .textCenter {text-align:center;}
 
@@ -317,6 +333,7 @@ hr {
 	border-top: 1px solid #eee;
 	border-bottom: 0px solid #eee;
 	margin: 0;
+	width: 100%;
 }
 
 @media only screen and (max-width: 700px) {

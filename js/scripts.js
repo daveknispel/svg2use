@@ -7,9 +7,10 @@ function resetAll() {
   $('textarea').val('');
   $('#hidden, #iconHolder').html('');
   $('#iconHolderSize').css('opacity' , '0');
-  //activate buttons
+  //deactivate buttons
   $('#submitSVG').prop('disabled' , true);
-  $('#convertedSVGcode button, #convertedCSScode button, #convertedHTMLcode button').prop('disabled' , true);
+  $('#convertedSVGcode button, #convertedCSScode button, #convertedHTMLcode button').prop('disabled' , true);  
+  $('.resetAll').prop('disabled' , true);
 }
 
 $(document).ready(function(){
@@ -20,8 +21,10 @@ resetAll();
 $('#rawSVG').keyup(function() {
       if ( $(this).val().indexOf("svg") > -1 ) {
           $('#submitSVG').prop('disabled' , false);
+
+         $('.resetAll').prop('disabled' , false);
      } else {
-         $('#submitSVG').prop('disabled' , true);
+         $('#submitSVG').prop('disabled' , true); 
   }
 });
 
@@ -30,13 +33,28 @@ function covertCode() {
 
   resetResults();
 
-
   //PLACE SVG INTO HIDDEN DIV
   var SVGinitial = $('#initialSVGcode textarea').val();
   $('#hidden').html(SVGinitial);  
+
+  //CHECK FOR SVG LAYERS
+  var layerCount = $('#hidden svg > g[id]').length;
+  if (layerCount > 1) {
+
+  covertCodeInner();
+
+  } else {
+    alert('The SVG icon set requires multiple named layers.');
+  }
+
+  function covertCodeInner() { 
+
+  //gradient alert
+  if ( $('#rawSVG').val().indexOf("gradient") > -1 ) {
+     alert('This site is not currently supporting icons with gradients,\n but enjoy your icons without the gradient for now...');
+  } 
   
   //GET CSS CODE & ADD TO TEXTAREA
-
 
   //check for inline style
   if ($('#hidden [type="text/css"]').length) {
@@ -111,6 +129,8 @@ function covertCode() {
   $('html, body').animate({
         scrollTop: $("#convertedSVGcode").offset().top - 70
     }, 1000);
+
+  }
   
 }
 
@@ -163,10 +183,18 @@ function copyCSScodeFunction() {
 } 
 
 //INSERT SAMPLE CODE BUTTON 
-function insertSamplecodeFunction() {
+function insertSamplecodeFunction(objButton) {
 
+resetResults();
+//activate resetall button
+$('.resetAll').prop('disabled' , false);
+//deactivate buttons
+$('#submitSVG').prop('disabled' , true);
+$('#convertedSVGcode button, #convertedCSScode button, #convertedHTMLcode button').prop('disabled' , true);
+
+var sampleNumber = objButton.value;
 var testing;
-$.ajax('samplecode.xml', {
+$.ajax('samplecode' + sampleNumber + '.xml', {
     dataType: 'text',
     success: function (data) {
         testing = data;

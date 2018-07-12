@@ -58,7 +58,6 @@
 <link rel="stylesheet" type="text/css" href="style/style.css">
 <script src="js/jquery.min.js"></script>
 <script src="//platform-api.sharethis.com/js/sharethis.js#property=5b2f9ce41340b60011915b78&product=inline-share-buttons"></script>
-<script async defer src="https://buttons.github.io/buttons.js"></script>
 
 
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;" title="svg2use logo">
@@ -121,7 +120,7 @@
 <div id="topBar" class="grid justify">
 <a class="github topGithub smallText" href="https://github.com/daveknispel/svg2use"><svg class="iconsvguse"><use xlink:href="socialicons.svg#github"></use></svg><span>View on GitHub</span></a>
 <div>
-<a class="github-button" href="https://github.com/daveknispel/svg2use" data-show-count="false" aria-label="Star daveknispel/svg2use on GitHub">Star</a>
+
 <span class="smallText">Please Share </span><div class="sharethis-inline-share-buttons"></div>
 </div>
 </div>
@@ -139,9 +138,8 @@
 <section id="mainBody">
 <div class="container grid">
 
-<div class="grid justify">
-<h2 class="col-2 col-1-small">Settings</h2>
-<button class="resetAll smallText" onclick="resetAll()">Reset</button>
+<div class="grid justify col-1 marBot0">
+<h2 class="col-2 col-1-small marBot0">Settings</h2>
 </div>
 
 <div class="col-1 card settings">
@@ -174,16 +172,26 @@
 
 </div>
 
+<div class="col-1 justify grid marBot0">
+<div><button class="resetAll smallText" onclick="resetAll()" disabled>Reset</button></div>
+<div>
+	<h3 class="inline">Try a demo&nbsp;</h3>
+	<button title="No color - icon set" class="appendSample smallText iconOnly" value="1" onclick="insertSamplecodeFunction(this)">1</button>
+	<button title="Two color fill - icon set" class="appendSample smallText iconOnly" value="2" onclick="insertSamplecodeFunction(this)">2</button>
+	<button title="Gradient fill - icon set" class="appendSample smallText iconOnly" value="3" onclick="insertSamplecodeFunction(this)">3</button>
+</div>
+</div>
+
 <div id="initialSVGcode" class="forms col-1 card">
 <h2>Paste raw SVG code here <span class="lightGrey smallText"> (The SVG icons need to be prepared as layers)</span></h2>
-<button class="appendSample smallText" onclick="insertSamplecodeFunction()">Insert Sample SVG code</button>
 <textarea id="rawSVG" class="html" placeholder="<svg..."></textarea>
 <button id="submitSVG" disabled>Convert SVG Code</button>
 <div id="hidden" style="display:none;"></div>
 </div>
 
 <a href="#converted"></a>
-<div class="col-1"><hr><br/><h2>Converted Code</h2></div>
+<br/>
+<div class="col-1 grid marBot0"><hr><h2 class="col-1 marBot0">Converted Code</h2></div>
 
 
 <div id="convertedSVGcode" class="forms col-3 card">
@@ -256,7 +264,5 @@
     a.appendChild(r);
 })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
-<script src="js/svg4everybody.js"></script>
-<script>svg4everybody();</script>
 </body> 
 </html>
