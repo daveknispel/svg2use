@@ -34,7 +34,7 @@ Convert SVG icon sets for the Web, Easily!  Use this website to convert the SVG 
 
 This website has used the accessibility techniques from Jonathan Neal @jonathantneal with the title technique as seen [here](https://github.com/jonathantneal/SVG4everybody#readability-and-accessibility) and also with Léonie Watson aria label technique as seen [here](https://developer.paciellogroup.com/blog/2013/12/using-aria-enhance-SVG-accessibility/). Thanks for much to these guys for pathing the way!
 
-## Other SVG <use> methods teachings that lead me here & are worth a read
+## Other SVG use methods teachings that lead me here & are worth a read
 
 * [Inline SVG with the ‘use’ element - Shane Osbourne](https://wearejh.com/inline-SVG-use-element/)
 * [How to work with SVG icons  - Florens Verschelde](https://fvsch.com/SVG-icons/)
