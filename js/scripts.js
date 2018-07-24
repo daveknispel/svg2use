@@ -60,7 +60,7 @@ function covertCode() {
   if ($('#hidden [type="text/css"]').length) {
     var inlineCSS = $('#hidden [type="text/css"]')[0].innerHTML;
     //replace fill with color
-    inlineCSS = inlineCSS.replace(/fill/g, 'color').replace(/\t/g, '');
+    inlineCSS = inlineCSS.replace(/fill/g, 'color').replace(/\t/g, '').replace(/none/g, 'transparent');
     inlineCSS = '\n/* delete class styling below you want to be affected by hover effects*/' + inlineCSS
   } else {
     var inlineCSS = '\n';
