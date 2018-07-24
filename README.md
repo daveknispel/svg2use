@@ -1,4 +1,4 @@
-# [daveknispel.github.io/SVG2use/]()
+# [daveknispel.github.io/SVG2use/](daveknispel.github.io/SVG2use/)
 
 Convert SVG icon sets for the Web, Easily!  Use this website to convert the SVG icon set code from preferred vector program ready for use on intended website or digital platform. It prepares the SVG icons in symbol wrappers ready to reference with the use method. A good resource for understanding more about this method, written by Sara Soueidan, can be found [here.](https://tympanus.net/codrops/2015/07/16/styling-SVG-use-content-css/)
 
