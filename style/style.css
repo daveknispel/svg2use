@@ -173,6 +173,17 @@ textarea:focus {
 	border: 1px solid #ff004e;
 }
 
+.instructions {
+	border: 1px solid #fff;
+	text-decoration: none;
+	padding: 0.5em 1.5em;
+	border-radius: 20px;
+}
+
+.instructions:hover {
+	background: #fff;
+}
+
 button {
 	background: #fff;
 	border: 1px solid #ddd;

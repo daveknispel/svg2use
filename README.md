@@ -1,6 +1,6 @@
 # [daveknispel.github.io/svg2use/]()
 
-Convert SVGs for the Web Easily!  Use this website to convert the SVG icon set code from preferred vector program ready for use on intended website or digital platform. It prepares the svg icons in symbol wrappers ready to refernce with the use method. Read more about the benefits of this method on [CSS Tricks](https://css-tricks.com/svg-symbol-good-choice-icons/)
+Convert SVG icon sets for the Web, Easily!  Use this website to convert the SVG icon set code from preferred vector program ready for use on intended website or digital platform. It prepares the svg icons in symbol wrappers ready to refernce with the <use> method. A good resource for understanding more about this method, written by Sara Soueidan, can be found [here.](https://tympanus.net/codrops/2015/07/16/styling-svg-use-content-css/)
 
 ## Instructions
 
@@ -43,6 +43,7 @@ This website has used the accessibilty techniques from Jonathan Neal @jonathantn
 * [Using SVGs  -  Chris Coyier](https://css-tricks.com/using-svg/)
 * [https://css-tricks.com/scale-svg/  -  Amelia Bellamy-Royds](https://css-tricks.com/scale-svg/)
 * [Inline SVG hover states with CSS (<use> tag)  - Nick Noordijk](https://medium.com/@nicknoordijk/inline-svg-hover-states-with-css-use-tag-4a336ed75062)
+* [SVG on the web A Practical Guide -Amelia Bellamy-Royds](https://svgontheweb.com/)
 * [SVG `use` with External Source  -  Chris Coyier](https://css-tricks.com/svg-use-external-source/)
 * [SVG `use` with External Reference Take 2  -  Chris Coyier](https://css-tricks.com/svg-use-with-external-reference-take-2/)
 * [Tips for Creating Accessible SVG - Léonie Watson](https://www.sitepoint.com/tips-accessible-svg/)
