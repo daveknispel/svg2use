@@ -1,6 +1,6 @@
 # [daveknispel.github.io/SVG2use/]()
 
-Convert SVG icon sets for the Web, Easily!  Use this website to convert the SVG icon set code from preferred vector program ready for use on intended website or digital platform. It prepares the SVG icons in symbol wrappers ready to reference with the <use> method. A good resource for understanding more about this method, written by Sara Soueidan, can be found [here.](https://tympanus.net/codrops/2015/07/16/styling-SVG-use-content-css/)
+Convert SVG icon sets for the Web, Easily!  Use this website to convert the SVG icon set code from preferred vector program ready for use on intended website or digital platform. It prepares the SVG icons in symbol wrappers ready to reference with the use method. A good resource for understanding more about this method, written by Sara Soueidan, can be found [here.](https://tympanus.net/codrops/2015/07/16/styling-SVG-use-content-css/)
 
 ## Instructions
 
@@ -25,8 +25,8 @@ Convert SVG icon sets for the Web, Easily!  Use this website to convert the SVG 
 * This will convert code ready to add to intended website
 
 ### 4. Add code to intended website
-* 'SVG as <symbols>' code belongs in the **header** of the website
-* 'HTML SVG <use>' code has each of the icons html. Add this icon to where you would like the icon to appear in the **body**
+* 'SVG as symbols' code belongs in the **header** of the website
+* 'HTML SVG use' code has each of the icons html. Add this icon to where you would like the icon to appear in the **body**
 * 'CSS' code belongs in website **style sheet**, you should be able to adjust this code for your own use.
 
 
@@ -38,11 +38,11 @@ This website has used the accessibility techniques from Jonathan Neal @jonathant
 
 * [Inline SVG with the ‘use’ element - Shane Osbourne](https://wearejh.com/inline-SVG-use-element/)
 * [How to work with SVG icons  - Florens Verschelde](https://fvsch.com/SVG-icons/)
-* [Styling SVG <use> Content with CSS -  Sara Soueidan](https://tympanus.net/codrops/2015/07/16/styling-SVG-use-content-css/)
+* [Styling SVG use Content with CSS -  Sara Soueidan](https://tympanus.net/codrops/2015/07/16/styling-SVG-use-content-css/)
 * [Inline SVG Icons -  Kartik Prabhu](https://kartikprabhu.com/articles/inline-SVG-icons)
 * [Using SVGs  -  Chris Coyier](https://css-tricks.com/using-SVG/)
-* [https://css-tricks.com/scale-SVG/  -  Amelia Bellamy-Royds](https://css-tricks.com/scale-SVG/)
-* [Inline SVG hover states with CSS (<use> tag)  - Nick Noordijk](https://medium.com/@nicknoordijk/inline-SVG-hover-states-with-css-use-tag-4a336ed75062)
+* [How to Scale SVG  -  Amelia Bellamy-Royds](https://css-tricks.com/scale-SVG/)
+* [Inline SVG hover states with CSS (use tag)  - Nick Noordijk](https://medium.com/@nicknoordijk/inline-SVG-hover-states-with-css-use-tag-4a336ed75062)
 * [SVG on the web A Practical Guide -Amelia Bellamy-Royds](https://SVGontheweb.com/)
 * [SVG `use` with External Source  -  Chris Coyier](https://css-tricks.com/SVG-use-external-source/)
 * [SVG `use` with External Reference Take 2  -  Chris Coyier](https://css-tricks.com/SVG-use-with-external-reference-take-2/)
@@ -50,7 +50,7 @@ This website has used the accessibility techniques from Jonathan Neal @jonathant
 
 ## Browser Support
 
-Find out more about <use> browser support [here at MDN web docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use)
+Find out more about use browser support [here at MDN web docs.](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use)
 For greater browser support take a look at [https://github.com/jonathantneal/SVG4everybody](https://github.com/jonathantneal/SVG4everybody)
 
 ## Authors
