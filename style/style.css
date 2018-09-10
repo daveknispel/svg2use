@@ -68,6 +68,12 @@ section {
 	padding: 1em 0;
 }
 
+div:focus {
+	outline: 0;
+	border: 0; 
+	box-shadow: 0 0 0 transparent;
+}
+
 .container {
 	width: 100%;
 	max-width: 1000px;
